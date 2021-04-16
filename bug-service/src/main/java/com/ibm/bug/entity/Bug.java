@@ -37,6 +37,8 @@ public class Bug {
 	@NotBlank
 	@NotNull
 	@Size(min = 5, max = 200, message = "Should be between 5 and 200 characters")
+	
+	
 	private String title;
 	private String product;
 	

@@ -31,8 +31,14 @@ public class BugService {
 	 * @return zero or matching bug
 	 */
 
-	public Optional<Bug> getBug(String bugId) {
-		return bugRepository.findById(bugId);
+//	public Optional<Bug> getBug(String bugId) {
+//		return bugRepository.findById(bugId);	
+//		}
+//	
+	
+	
+	public Optional<Bug> getBugbyName(String bugTitle) {
+		return bugRepository.findByName(bugTitle);
 	}
 	
 	/**

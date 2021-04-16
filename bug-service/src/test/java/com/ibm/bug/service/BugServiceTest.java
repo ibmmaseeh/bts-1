@@ -60,11 +60,11 @@ class BugServiceTest {
 	/**
 	 * method to test the getBug method using bugId parameter
 	 */
-	@Test
-	void testGetBugById() {
-		Optional<Bug> bug1 = bugService.getBug("24398t84gb32oi");
-		assertNotNull(bug1);
-	}
+//	@Test
+//	void testGetBugById() {
+//		Optional<Bug> bug1 = bugService.getBug("24398t84gb32oi");
+//		assertNotNull(bug1);
+//	}
 	
 	
 	

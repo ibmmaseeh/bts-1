@@ -48,152 +48,159 @@
 		</div>
 	</nav>
 
-	<form class="jumbotron required" id="createBug">
-        <div>
+	
+	
+	
+	
+		
+
+	<form class="jumbotron required" id="updateBug">
+		<div>
 
 
 
 
 
-            <div class="form-group row">
+			<div class="form-group row">
 				<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Bug ID</label>
-              <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder="Enter Bug Id" id="bugId"  onfocusout="getStatus()" required>
-              </div>
-                <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Title</label>
-                <div class="col">
-                    <textarea minlength="5" maxlength="200" class="form-control"
-                        placeholder="Title in less than 200 characters" id="title" required></textarea>
-                </div>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" placeholder="Enter Bug Id" id="bugId"
+						onfocusout="getStatus()" required>
+				</div>
+				<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Title</label>
+				<div class="col">
+					<textarea minlength="5" maxlength="200" class="form-control"
+						placeholder="Title in less than 200 characters" id="title" required></textarea>
+				</div>
 
-            </div>
+			</div>
 
-        </div>
+		</div>
 
-        <div>
-            <div class="form-group row">
+		<div>
+			<div class="form-group row">
 
 
 				<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Description</label>
-                <div class="col">
-                    <textarea maxlength="1000" class="form-control" placeholder="Describe in less than 1000 characters"
-                        id="description" required></textarea>
+				<div class="col">
+					<textarea maxlength="1000" class="form-control" placeholder="Describe in less than 1000 characters"
+						id="description" required></textarea>
 				</div>
-				
-                <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Priority</label>
-                <div class="col">
 
-                    <select class="selectpicker form-control" data-live-search="true" id="priority" required>
-                        <option value="" disabled selected>Select Priority</option>
-                        <option>LOW</option>
-                        <option>MEDIUM</option>
-                        <option>HIGH</option>
-                    </select>
-                </div>
+				<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Priority</label>
+				<div class="col">
 
-            </div>
-        </div>
+					<select class="selectpicker form-control" data-live-search="true" id="priority" required>
+						<option value="" disabled selected>Select Priority</option>
+						<option>LOW</option>
+						<option>MEDIUM</option>
+						<option>HIGH</option>
+					</select>
+				</div>
 
-        <div>
-            <div class="form-group row">
+			</div>
+		</div>
+
+		<div>
+			<div class="form-group row">
 
 				<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Status</label>
 
-                <div class="col">
-                    <select class="selectpicker form-control" data-live-search="true" id="status" required>
-                        <option value="" disabled selected>Select Option</option>
-                        <option>NEW</option>
-                        <option>OPEN</option>
-                        <option>ASSIGNED</option>
-                        <option>FIXED</option>
-                        <option>PENDING_RETEST</option>
-                        <option>RETEST</option>
-                        <option>REOPEN</option>
-                        <option>VERIFIED</option>
-                        <option>CLOSED</option>
-                        <option>NOT_A_BUG</option>
-                        <option>REJECTED</option>
-                        <option>DUPLICATE</option>
-                        <option>DEFERRED</option>
-                        <option>COULDNT_REPRODUCE</option>
-                        <option>NEED_MORE_INFORMATION</option>
-                    </select>
-                </div>
-                <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Type</label>
-                <div class="col">
-                    <select class="selectpicker form-control" data-live-search="true" id="type" required>
-                        <option value="" disabled selected>Select Type</option>
-                        <option>PROBLEM_REQUEST</option>
-                        <option>CHANGE_REQUEST</option>
-                    </select>
+				<div class="col">
+					<select class="selectpicker form-control" data-live-search="true" id="status" value="" required>
+						<option value="" disabled selected>Select Option</option>
+						<option>NEW</option>
+						<option>OPEN</option>
+						<option>ASSIGNED</option>
+						<option>FIXED</option>
+						<option>PENDING_RETEST</option>
+						<option>RETEST</option>
+						<option>REOPEN</option>
+						<option>VERIFIED</option>
+						<option>CLOSED</option>
+						<option>NOT_A_BUG</option>
+						<option>REJECTED</option>
+						<option>DUPLICATE</option>
+						<option>DEFERRED</option>
+						<option>COULDNT_REPRODUCE</option>
+						<option>NEED_MORE_INFORMATION</option>
+					</select>
+				</div>
+				<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Type</label>
+				<div class="col">
+					<select class="selectpicker form-control" data-live-search="true" id="type" required>
+						<option value="" disabled selected>Select Type</option>
+						<option>PROBLEM_REQUEST</option>
+						<option>CHANGE_REQUEST</option>
+					</select>
 
 
-                </div>
+				</div>
 
-               
 
-            </div>
-        </div>
 
-        <div>
-            <div class="form-group row">
+			</div>
+		</div>
+
+		<div>
+			<div class="form-group row">
 
 				<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Submitted On</label>
 
-                <div class="col">
-                    <input class="custom-select custom-select-md " type="date" id="submitOnDate" disabled>
+				<div class="col">
+					<input class="custom-select custom-select-md " type="date" id="submitOnDate" disabled>
 				</div>
-				
-                <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Build Version</label>
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Enter Build Version" id="buildVersion"
-                        required>
-                </div>
-            </div>
 
-        </div>
+				<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Build Version</label>
+				<div class="col">
+					<input type="text" class="form-control" placeholder="Enter Build Version" id="buildVersion"
+						required>
+				</div>
+			</div>
 
-        <div>
-            <div class="form-group row">
+		</div>
+
+		<div>
+			<div class="form-group row">
 				<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Project ID</label>
 
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Enter project ID" id="projectId" required>
+				<div class="col">
+					<input type="text" class="form-control" placeholder="Enter project ID" id="projectId" required>
 				</div>
-				
-                <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label control-label">Module</label>
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Enter Module" id="module" required>
-                </div>
 
-               
-            </div>
-        </div> 
+				<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label control-label">Module</label>
+				<div class="col">
+					<input type="text" class="form-control" placeholder="Enter Module" id="module" required>
+				</div>
 
-        <div class="form-group row">
+
+			</div>
+		</div>
+
+		<div class="form-group row">
 			<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label control-label">Product</label>
 
 			<div class="col">
 				<input type="text" class="form-control" placeholder="Enter Product Type " id="product" required>
 			</div>
-            <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">ETA</label>
+			<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">ETA</label>
 
-            <div class="col-sm-4">
-                <input class="custom-select custom-select-md " type="date" id="etaDate" required>
-            </div>
-        </div>
+			<div class="col-sm-4">
+				<input class="custom-select custom-select-md " type="date" id="etaDate" required>
+			</div>
+		</div>
 
 
-        <p style="margin-top:30px">
-            <span class="required control-label"></span>Required field
-        </p>
+		<p style="margin-top:30px">
+			<span class="required control-label"></span>Required field
+		</p>
 
 	</form>
-	
+
 
 	<div class="text-center">
 		<button type="button" class="btn btn-outline-primary form-control" onclick="updateBug()">Update</button>
-		
+
 	</div>
 
 	<footer class="page-footer font-small blue">

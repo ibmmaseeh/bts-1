@@ -6,7 +6,7 @@ function success(response) {
         return;
     }
     console.log(response);
-    return response.json();
+    // return response.json();
 }
 function errorHandler(error) {
     console.log(error);
@@ -180,7 +180,7 @@ function updateBug() {
             projectId: document.getElementById('projectId').value,
             module: document.getElementById('module').value,
             product: document.getElementById('product').value,
-            etaDate: document.getElementById('etaDate').value,
+            etaDate: document.getElementById('etaDate').value
         })
     });
 
@@ -195,16 +195,102 @@ function getStatus() {
 	let id = document.getElementById('bugId').value;
 
 	const promise1 = fetch('/bug/' + id, {
-		method: 'GET',
-		headers: {
+        method: 'GET',
+        headers: {
 			'Content-Type': 'application/json'
-		}
-	});
+        }
+    });
 
-	promise1.then(success);
-	promise1.then(function(data) {
-		console.log(data);
-	})
+    promise1.then(function(response){
+        response.json().then(function(data){
+            appendData(data);
+        
+        });
+
+    });
+
+
+    function appendData(data) {
+        // var mainContainer = document.getElementById("status");
+        // var div= document.createElement("input");
+        console.log(data.status);
+        // div.innerHTML='title:' + data.status;
+        // mainContainer.appendChild(div);
+          
+      }
+    
+
+   
+
+
+
+
+   
+
+        
+        
+    
+
+   
+		
+	 promise1.then(success);
+	//  promise1.then(function(data) {
+    // console.log(data);
+    //}) 
 	promise1.catch(errorHandler);
 
 }
+
+function getBugbyName(){
+    let id = document.getElementById('title').value;
+    const promise = fetch('/bug/' + id);
+    promise.then(function (response) {
+        return response.json();
+    })
+        .then(function (bug) {
+            console.log(bug);
+            const table = document.getElementById('bugsTable');
+            table.innerHTML = "";
+            const row = document.createElement('tr');
+            const titleColumn = document.createElement('td');
+            const descriptionColumn = document.createElement('td');
+            const statusColumn = document.createElement('td');
+            const priorityColumn = document.createElement('td');
+            const typeColumn = document.createElement('td');
+            const submitOnDateColumn = document.createElement('td');
+            const buildVersionColumn = document.createElement('td');
+            const projectIdColumn = document.createElement('td');
+            const moduleColumn = document.createElement('td');
+            const productColumn = document.createElement('td');
+            const etaDateColumn = document.createElement('td');
+
+            titleColumn.append(bug.title);
+            descriptionColumn.append(bug.description);
+            statusColumn.append(bug.status);
+            priorityColumn.append(bug.priority);
+            typeColumn.append(bug.type);
+            submitOnDateColumn.append(bug.submitOnDate);
+            buildVersionColumn.append(bug.buildVersion);
+            projectIdColumn.append(bug.projectId);
+            moduleColumn.append(bug.module);
+            productColumn.append(bug.product);
+            etaDateColumn.append(bug.etaDate);
+            row.appendChild(titleColumn);
+            row.appendChild(descriptionColumn);
+            row.appendChild(statusColumn);
+            row.appendChild(priorityColumn);
+            row.appendChild(typeColumn);
+            row.appendChild(submitOnDateColumn);
+            row.appendChild(buildVersionColumn);
+            row.appendChild(projectIdColumn);
+            row.appendChild(moduleColumn);
+            row.appendChild(productColumn);
+            row.appendChild(etaDateColumn);
+            table.appendChild(row);
+        })
+}
+
+    
+
+
+
