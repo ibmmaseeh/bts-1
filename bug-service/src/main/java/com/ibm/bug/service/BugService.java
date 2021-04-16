@@ -36,7 +36,6 @@ public class BugService {
 //		}
 //	
 	
-	
 	public Optional<Bug> getBugbyName(String bugTitle) {
 		return bugRepository.findByName(bugTitle);
 	}

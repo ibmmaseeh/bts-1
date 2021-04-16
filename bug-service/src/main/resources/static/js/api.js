@@ -175,7 +175,7 @@ function updateBug() {
             status: document.getElementById('status').value,
             priority: document.getElementById('priority').value,
             type: document.getElementById('type').value,
-            submitOnDate: document.getElementById('submitOnDate').valueAsDate,
+            submitOnDate: document.getElementById('submitOnDate').value,
             buildVersion: document.getElementById('buildVersion').value,
             projectId: document.getElementById('projectId').value,
             module: document.getElementById('module').value,
@@ -242,7 +242,7 @@ function getStatus() {
 }
 
 function getBugbyName(){
-    let id = document.getElementById('title').value;
+    let id = document.getElementById('bugName').value;
     const promise = fetch('/bug/' + id);
     promise.then(function (response) {
         return response.json();
