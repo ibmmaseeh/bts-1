@@ -287,6 +287,9 @@ function getBugbyName(){
             row.appendChild(productColumn);
             row.appendChild(etaDateColumn);
             table.appendChild(row);
+
+            
+            
         })
 }
 

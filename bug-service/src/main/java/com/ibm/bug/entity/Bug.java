@@ -27,7 +27,7 @@ public class Bug {
 //	@NotNull
 //	@NotBlank
 	private String projectId;
-	@CreatedDate
+	
 	private Date submitOnDate;
 	private String module;
 	@NotBlank
@@ -42,11 +42,7 @@ public class Bug {
 	private String title;
 	private String product;
 	
-	
 	private Date etaDate;
-	
-	
-	
 	
 	public Date getEtaDate() {
 		return etaDate;
@@ -95,10 +91,12 @@ public class Bug {
 	public void setProjectId(String projectId) {
 		this.projectId = projectId;
 	}
-	public Date getSubmitOn() {
+	
+	
+	public Date getSubmitOnDate() {
 		return submitOnDate;
 	}
-	public void setSubmitOn(Date submitOnDate) {
+	public void setSubmitOnDate(Date submitOnDate) {
 		this.submitOnDate = submitOnDate;
 	}
 	public String getModule() {
