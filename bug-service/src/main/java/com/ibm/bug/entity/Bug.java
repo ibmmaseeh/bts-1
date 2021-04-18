@@ -64,7 +64,15 @@ public class Bug {
 		return status;
 	}
 	public void setStatus(STATUS status) {
-		this.status = status;
+		if(status==STATUS.NOT_A_BUG || status==STATUS.DUPLICATE || status==STATUS.REJECTED) {
+			this.status = STATUS.CLOSED;
+		}
+		else if(status==STATUS.DEFERRED || status==STATUS.COULDNT_REPRODUCE ||status==STATUS.NEED_MORE_INFORMATION ) {
+			this.status = STATUS.ASSIGNED;
+		}
+		else {
+			this.status = status;
+		}
 	}
 	public String getId() {
 		return id;

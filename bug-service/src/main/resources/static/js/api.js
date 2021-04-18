@@ -297,3 +297,24 @@ function getBugbyName(){
 
 
 
+// function getStatus() {
+// 	let id = document.getElementById('bugId').value;
+// 	fetch('/bug/' + id)
+//   	.then(res => res.json())
+//   	.then(data => obj = data)
+//   	.then(() => console.log(obj.status))
+// 	// const promise1 = fetch('/bug/' + id, {
+// 	// 	method: 'GET',
+// 	// 	headers: {
+// 	// 		'Content-Type': 'application/json'
+// 	// 	}
+// 	// });
+// 	// let obj;
+// 	// promise1.then(success);
+// 	// promise1.then(function(data) {
+// 	// 	console.log(data);
+// 	// 	obj=JSON.parse(data);
+//     // })
+//     // console.log(obj);
+// 	// promise1.catch(errorHandler);
+// }
