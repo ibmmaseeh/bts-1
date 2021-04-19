@@ -50,9 +50,15 @@ public class BugController {
 //		return bugService.getBug(bugId);
 //	}
 	
-	@GetMapping("/bug/{title}")
+	@GetMapping("/bug/title/{title}")
 	Optional<Bug> getBugbyName(@PathVariable("title") String bugTitle) {
 		return bugService.getBugbyName(bugTitle);
+		}
+	
+
+	@GetMapping("/bug/status/{status}")
+	List<Bug> getBugbyName(@PathVariable("status") STATUS bugStatus) {
+		return bugService.getBugbyStatus(bugStatus);
 		}
 	
 	
