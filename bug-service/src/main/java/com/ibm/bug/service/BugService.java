@@ -169,9 +169,10 @@ public class BugService {
 		return bugRepository.findByStatus(bugStatus);	
 	}
 
-//	public Optional<Bug> getBugbyStatus(STATUS bugStatus) {
-//		
-//		return bugRepository.getBugbyStatus(bugStatus);	
-//		}
+	public List<Bug> getBugbyStatusAndTitle(STATUS bugStatus, String bugTitle) {
+		// TODO Auto-generated method stub
+		return bugRepository.findByStatusAndTitle(bugStatus,bugTitle);
+	}
+
 
 }

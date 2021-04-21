@@ -20,6 +20,8 @@ Optional<Bug> findByName(String name);
 
 
 List<Bug> findByStatus(STATUS bugStatus);
+
+List<Bug> findByStatusAndTitle(STATUS bugStatus, String bugTitle );
 	
 
 

@@ -28,6 +28,7 @@ public class Bug {
 //	@NotBlank
 	private String projectId;
 	
+	@CreatedDate
 	private Date submitOnDate;
 	private String module;
 	@NotBlank

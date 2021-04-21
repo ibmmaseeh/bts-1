@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import javax.validation.Valid;
+import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -59,6 +60,13 @@ public class BugController {
 	@GetMapping("/bug/status/{status}")
 	List<Bug> getBugbyName(@PathVariable("status") STATUS bugStatus) {
 		return bugService.getBugbyStatus(bugStatus);
+		}
+	
+	
+
+	@GetMapping("/bug/search")
+	List<Bug> getBugbyStatusAndTitle(@PathParam("status") STATUS bugStatus,@PathParam("title") String bugTitle) {
+		return bugService.getBugbyStatusAndTitle(bugStatus,bugTitle);
 		}
 	
 	
