@@ -170,7 +170,7 @@ public class BugService {
 	}
 
 	public List<Bug> getBugbyStatusAndTitle(STATUS bugStatus, String bugTitle) {
-		// TODO Auto-generated method stub
+		
 		return bugRepository.findByStatusAndTitle(bugStatus,bugTitle);
 	}
 

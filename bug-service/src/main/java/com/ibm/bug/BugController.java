@@ -64,7 +64,7 @@ public class BugController {
 	
 	
 
-	@GetMapping("/bug/search")
+	@GetMapping("/bug/{status}/{title}")
 	List<Bug> getBugbyStatusAndTitle(@PathParam("status") STATUS bugStatus,@PathParam("title") String bugTitle) {
 		return bugService.getBugbyStatusAndTitle(bugStatus,bugTitle);
 		}
