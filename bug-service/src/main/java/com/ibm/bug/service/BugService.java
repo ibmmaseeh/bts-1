@@ -36,9 +36,9 @@ public class BugService {
 //		}
 //	
 	
-	public Optional<Bug> getBugbyName(String bugTitle) {
-		return bugRepository.findByName(bugTitle);
-	}
+//	public Optional<Bug> getBugbyName(String bugTitle) {
+//		return bugRepository.findByName(bugTitle);
+//	}
 	
 	/**
 	 * method to update the status of the code
@@ -52,6 +52,18 @@ public class BugService {
 		Optional<Bug> oldBug = bugRepository.findById(bug.getId());
 		oldBug.ifPresent(oldbug->{
 			STATUS oldstatus = oldbug.getStatus();
+			if(oldstatus==STATUS.NEW)
+			{
+				if(status==STATUS.ASSIGNED) {
+					bugRepository.save(bug);
+					
+				}
+				else {
+					throw new IllegalArgumentException("STATUS NOT ALLOWED");
+				}
+			}
+			
+			
 			if(oldstatus==STATUS.ASSIGNED)
 			{
 				if(status==STATUS.NEW) {
@@ -165,7 +177,7 @@ public class BugService {
 		this.bugRepository = bugRepository;
 	}
 
-	public List<Bug> getBugByName(String bugTitle) {
+	public List<Bug> getBugByTitle(String bugTitle) {
 		return bugRepository.findByTitleIgnoreCase(bugTitle);
 	}
 
@@ -173,17 +185,18 @@ public class BugService {
 		return bugRepository.findByStatus(bugStatus);
 	}
 	
-	public List<Bug> findByStatusAndTitle(STATUS bugStatus, String bugTitle) {
-		return bugRepository.findByStatusAndTitle(bugStatus, bugTitle);
-	}
-	
 	public void deleteBug(String bugId) {
 		bugRepository.deleteById(bugId);
 	}
 
-	public List<Bug> getBugByStatusAndTitle(STATUS bugStatus, String bugTitle) {
-		return bugRepository.findByStatusAndTitle(bugStatus, bugTitle);
+	public List<Bug> findByStatusAndTitle(STATUS bugStatus, String bugTitle) {
+		return bugRepository.findByStatusAndTitleIgnoreCase(bugStatus, bugTitle);
 	}
+	public List<Bug> getBugByPartialSearch(String bugName){
+		return bugRepository.findBySearchIgnoreCase(bugName);
+	}
+
+	
 
 
 }

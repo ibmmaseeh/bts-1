@@ -148,26 +148,14 @@ public class DummyBugRepository implements BugRepository {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	@Override
-	public List<Bug> findByStatusAndTitle(STATUS bugStatus, String bugTitle) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
+
+	
+
+	
 
 	@Override
-	public Optional<Bug> findByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Bug> findByStatus(STATUS bugStatus) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Optional<Bug> findByName(String bugTitle) {
+	public Optional<Bug> findByTitle(String bugTitle) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -183,5 +171,7 @@ public class DummyBugRepository implements BugRepository {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 }

@@ -12,13 +12,21 @@ import com.ibm.bug.entity.Bug;
 
 public interface BugRepository extends MongoRepository<Bug, String> {
 	
-	//@Query("{'title':?0}")
-	//Optional<Bug> findByName(String bugTitle);
+//	@Query("{'title':?0}")
+//	Optional<Bug> findByName(String bugTitle);
 
 	List<Bug> findByStatus(STATUS bugStatus);
-	List<Bug> findByStatusAndTitle(STATUS bugStatus,String bugTitle);
+//	@Query("{status: ?0,title : {$regex : ?1,'$options':'i'}}")
+	List<Bug> findByStatusAndTitleIgnoreCase(STATUS bugStatus,String bugTitle);
 
 //	@Query("{'title':?0}")
 	List<Bug> findByTitleIgnoreCase(String bugName);
+	
+	@Query("{title:{$regex : ?0,'$options':'i'}}")
+	List<Bug> findBySearchIgnoreCase(String bugSearch);
+	
+
+	
+	
 
 }

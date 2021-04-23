@@ -37,7 +37,7 @@ public class Bug {
 	private String module;
 	@NotBlank
 	@NotNull
-	@Size(min = 5, max = 1000, message = "Should be between 5 and 1000 characters")
+	@Size(max = 1000, message = "Should be between 5 and 1000 characters")
 	private String description;
 //	@NotBlank
 //	@NotNull
@@ -65,8 +65,7 @@ public class Bug {
 	public Date getEtaDate() {
 		return etaDate;
 	}
-	public void setEtaDate(Date etaDate) {
-		
+	public void setEtaDate(Date etaDate) {	
 		if(etaDate.compareTo(new Date())<0) {
 			throw new IllegalArgumentException("ETA shouldnt be a past date");
 		}
